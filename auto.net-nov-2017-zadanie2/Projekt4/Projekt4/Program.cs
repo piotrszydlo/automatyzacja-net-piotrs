@@ -28,14 +28,26 @@ namespace Zadanie4
             double x1 = 0;
             double x2 = 0;
 
-            // napisz obliczanie rozwiązań (miejsc zerowych) funkcji kwadratowej 
-            // jeśli nie pamiętasz jak to się liczy to tutaj jest ściąga
-            // http://matma.prv.pl/kwadratowa.php
-            // postaraj się napisac to samodzielnie a nie googlując implementację
-            // powodzenia :)
-            
-            Console.WriteLine(x1);
-            Console.WriteLine(x2);
+            double delta = b * b - 4 * a * c;
+
+            if (delta > 0)
+            {
+                Console.WriteLine("Funkcja ma dwa miejsca zerowe");
+                x1 = (- b + Math.Sqrt(delta)) / 2 * a;
+                x2 = (- b - Math.Sqrt(delta)) / 2 * a;
+                Console.WriteLine("Miejsce zerowe x1 wynosi: " + x1);
+                Console.WriteLine("Miejsce zerowe x2 wynosi: " + x2);
+            }
+            else if (delta == 0)
+                {
+                    Console.WriteLine("Funkcja ma jedno miejsce zerowe");
+                    x1 = - b / 2 * a;
+                    Console.WriteLine("Miejsce zerowe x1 wynosi: " + x1);
+                }
+            else
+                {
+                    Console.WriteLine("Funkcja nie posiada miejsc zerowych");
+                }         
         }
     }
 }

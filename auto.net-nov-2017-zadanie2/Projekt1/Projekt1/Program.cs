@@ -12,7 +12,7 @@ namespace Zadanie1
             Bravo();
         }
 
-        private static void Bravo()
+        public static void Bravo()
         {
             Console.WriteLine();
             Console.WriteLine("Brawo! Pierwsze zadanie zrobione :)");
@@ -21,9 +21,9 @@ namespace Zadanie1
         }
     }
 
-    private class SayHello
+    public class SayHello
     {
-        private void Say()
+        public void Say()
         {
             Console.WriteLine("Hello world");
         }
