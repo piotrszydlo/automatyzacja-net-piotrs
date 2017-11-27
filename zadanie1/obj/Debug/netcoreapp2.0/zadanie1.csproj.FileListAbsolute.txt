@@ -9,3 +9,14 @@ C:\Users\ps8427\source\repos\zadanie1\zadanie1\obj\Debug\netcoreapp2.0\zadanie1.
 C:\Users\ps8427\source\repos\zadanie1\zadanie1\obj\Debug\netcoreapp2.0\zadanie1.AssemblyInfo.cs
 C:\Users\ps8427\source\repos\zadanie1\zadanie1\obj\Debug\netcoreapp2.0\zadanie1.dll
 C:\Users\ps8427\source\repos\zadanie1\zadanie1\obj\Debug\netcoreapp2.0\zadanie1.pdb
+C:\Users\ps8427\Source\Repos\automatyzacja-net-piotrs\zadanie1\bin\Debug\netcoreapp2.0\zadanie1.deps.json
+C:\Users\ps8427\Source\Repos\automatyzacja-net-piotrs\zadanie1\bin\Debug\netcoreapp2.0\zadanie1.runtimeconfig.json
+C:\Users\ps8427\Source\Repos\automatyzacja-net-piotrs\zadanie1\bin\Debug\netcoreapp2.0\zadanie1.runtimeconfig.dev.json
+C:\Users\ps8427\Source\Repos\automatyzacja-net-piotrs\zadanie1\bin\Debug\netcoreapp2.0\zadanie1.dll
+C:\Users\ps8427\Source\Repos\automatyzacja-net-piotrs\zadanie1\bin\Debug\netcoreapp2.0\zadanie1.pdb
+C:\Users\ps8427\Source\Repos\automatyzacja-net-piotrs\zadanie1\obj\Debug\netcoreapp2.0\zadanie1.csprojResolveAssemblyReference.cache
+C:\Users\ps8427\Source\Repos\automatyzacja-net-piotrs\zadanie1\obj\Debug\netcoreapp2.0\zadanie1.csproj.CoreCompileInputs.cache
+C:\Users\ps8427\Source\Repos\automatyzacja-net-piotrs\zadanie1\obj\Debug\netcoreapp2.0\zadanie1.AssemblyInfoInputs.cache
+C:\Users\ps8427\Source\Repos\automatyzacja-net-piotrs\zadanie1\obj\Debug\netcoreapp2.0\zadanie1.AssemblyInfo.cs
+C:\Users\ps8427\Source\Repos\automatyzacja-net-piotrs\zadanie1\obj\Debug\netcoreapp2.0\zadanie1.dll
+C:\Users\ps8427\Source\Repos\automatyzacja-net-piotrs\zadanie1\obj\Debug\netcoreapp2.0\zadanie1.pdb

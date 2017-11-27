@@ -673,11 +673,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\ps8427\\source\\repos\\zadanie1\\zadanie1\\zadanie1.csproj",
+      "projectUniqueName": "C:\\Users\\ps8427\\Source\\Repos\\automatyzacja-net-piotrs\\zadanie1\\zadanie1.csproj",
       "projectName": "zadanie1",
-      "projectPath": "C:\\Users\\ps8427\\source\\repos\\zadanie1\\zadanie1\\zadanie1.csproj",
+      "projectPath": "C:\\Users\\ps8427\\Source\\Repos\\automatyzacja-net-piotrs\\zadanie1\\zadanie1.csproj",
       "packagesPath": "C:\\Users\\ps8427\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ps8427\\source\\repos\\zadanie1\\zadanie1\\obj\\",
+      "outputPath": "C:\\Users\\ps8427\\Source\\Repos\\automatyzacja-net-piotrs\\zadanie1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
