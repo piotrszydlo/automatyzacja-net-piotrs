@@ -20,7 +20,7 @@ namespace Szkolenie_zad1
         {
             return (x * y);
         }
-        public double Devide(double x, double y)
+        public double Divide(double x, double y)
         {
             return (x / y);
         }
