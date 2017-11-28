@@ -9,18 +9,28 @@ namespace Szkolenie_zad1
 {
     public class MatematykaTest
     {
-        [Fact]
-        public void Add_return_sum_of_given_values()
+        [Theory]
+        [InlineData(10,20,30)]
+        [InlineData(0, 0, 0)]
+        [InlineData(-10, 20, 10)]
+        [InlineData(10, -20, -10)]
+        [InlineData(-10, -20, -30)]
+        [InlineData(10, 40, 50)]
+        [InlineData(0.1, 2.01, 2.11)]
+        public void TheoryExample(double x, double y, double expected)
+
+        //[Fact]
+        //public void Add_return_sum_of_given_values()
         {
             //przygotowanie - arrange
             //var math = new Matematyka(); - może być tak albo tak jak poniżej
             Matematyka math = new Matematyka();
 
             //test - act
-            var result = math.Add(10, 20);
+            var result = math.Add(x, y);
 
             //sprawdzenie wyników - assert
-            Assert.Equal(30, result);
+            Assert.Equal(expected, result);
         }
 
         [Fact]
