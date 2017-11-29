@@ -5,6 +5,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Xunit;
 using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace SeleniumTests
 {
@@ -37,22 +38,17 @@ namespace SeleniumTests
             OpenSearchResultByPageTitle(PageTitle);
             SearchingWebElement(SearchText);
 
+            //ver1
             var element = driver.FindElement(By.LinkText(SearchText));
-
             Assert.NotNull(element);
 
-            var elements = driver.FindElements(By.LinkText(SearchText));
+            //ver2
+            //var elements = GetWebElementsLink(SearchText);
+            //Assert.Single(elements);
 
-            Assert.Single(elements);
+            Assert.Single(GetWebElementsLink(SearchText));
 
-            SearchAndClickWebElement(CookiesAcceptanceText);
-
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            wait.Until(ExpectedConditions.InvisibilityOfElementWithText(By.LinkText(CookiesAcceptanceText), CookiesAcceptanceText));
-
-            waitForElementPresent(By.LinkText(SearchText), 2);
-
-            SearchAndClickWebElement(SearchText);
+            AcceptCookiesAndOpenPage();
 
             //ver1
             Assert.Contains(SearchHeaderText, driver.PageSource);
@@ -63,6 +59,21 @@ namespace SeleniumTests
 
         }
 
+        private void AcceptCookiesAndOpenPage()
+        {
+            SearchAndClickWebElement(CookiesAcceptanceText);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            wait.Until(ExpectedConditions.InvisibilityOfElementWithText(By.LinkText(CookiesAcceptanceText), CookiesAcceptanceText));
+
+            waitForElementPresent(By.LinkText(SearchText), 2);
+            SearchAndClickWebElement(SearchText);
+        }
+
+        private ReadOnlyCollection<IWebElement> GetWebElementsLink(string webText)
+        {
+            return driver.FindElements(By.LinkText(webText));
+        }
+
         private void SearchAndClickWebElement(string SearchedElementToClick)
         {
             driver.FindElement(By.LinkText(SearchedElementToClick)).Click();
@@ -70,7 +81,7 @@ namespace SeleniumTests
 
         private void SearchingWebElement(string WebText)
         {
-            var searchByText = driver.FindElement(By.LinkText(WebText));
+            driver.FindElement(By.LinkText(WebText));
         }
 
         private void SearchInGugiel(string SearchTextInGugiel)
