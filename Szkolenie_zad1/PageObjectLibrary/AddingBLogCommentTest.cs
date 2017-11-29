@@ -16,7 +16,12 @@ namespace PageObjectLibrary
         {
             MainPage.Open();
             MainPage.OpenFirstNote();
-
+            NotePage.AddComment(new Comment
+            { 
+                Text = "La Gitarra ",
+                Mail = "spam@spam.pl",
+                User = "szydełko czy nóżka "
+            });
             //otwórz 1 notkę
             //dodaj komenta
             //sprawdź że jest dodany
