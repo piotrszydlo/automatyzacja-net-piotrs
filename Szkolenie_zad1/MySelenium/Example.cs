@@ -12,56 +12,88 @@ namespace SeleniumTests
     {
         private IWebDriver driver;
         private StringBuilder verificationErrors;
-        private string baseURL;
-        private bool acceptNextAlert = true;
+
+        private const string SearchTextBoxId = "lst-ib";
+        private const string Gugiel = "https://www.google.pl/";
+        private const string SearchText = "Poznaj nasze podejście";
+        private const string SearchHeaderText = "WIEDZA NA PIERWSZYM MIEJSCU";
+        private const string CookiesAcceptanceText = "Akceptuję";
+        private const string PageTitle = "Code Sprinters -";
+        private const string SearchTextInGugiel = "code sprinters";
 
         public Example()
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-//            driver.Manage().Timeouts().ImplicitWait
-            baseURL = "https://www.google.pl/";
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(100);
             verificationErrors = new StringBuilder();
         }
-        
-
 
         [Fact]
         public void TheExampleTest()
         {
+            GoToGugiel();
+            SearchInGugiel(SearchTextInGugiel);
+            OpenSearchResultByPageTitle(PageTitle);
+            SearchingWebElement(SearchText);
 
-           
-
-            driver.Navigate().GoToUrl(baseURL);
-            driver.FindElement(By.Id("lst-ib")).Clear();
-            driver.FindElement(By.Id("lst-ib")).SendKeys("code sprinters");
-            driver.FindElement(By.Id("lst-ib")).Submit();
-            driver.FindElement(By.LinkText("Code Sprinters -")).Click();
-
-            var element = driver.FindElement(By.LinkText("Poznaj nasze podejście"));
+            var element = driver.FindElement(By.LinkText(SearchText));
 
             Assert.NotNull(element);
 
-            var elements = driver.FindElements(By.LinkText("Poznaj nasze podejście"));
+            var elements = driver.FindElements(By.LinkText(SearchText));
 
             Assert.Single(elements);
 
-            driver.FindElement(By.Id("cookie_action_close_header")).Click();
+            SearchAndClickWebElement(CookiesAcceptanceText);
 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            wait.Until(ExpectedConditions.InvisibilityOfElementWithText(By.LinkText("Akceptuję"), "Akceptuję"));
+            wait.Until(ExpectedConditions.InvisibilityOfElementWithText(By.LinkText(CookiesAcceptanceText), CookiesAcceptanceText));
 
-            waitForElementPresent(By.LinkText("Poznaj nasze podejście"), 2);
+            waitForElementPresent(By.LinkText(SearchText), 2);
 
-            driver.FindElement(By.LinkText("Poznaj nasze podejście")).Click();
+            SearchAndClickWebElement(SearchText);
 
             //ver1
-            Assert.Contains("WIEDZA NA PIERWSZYM MIEJSCU", driver.PageSource);
+            Assert.Contains(SearchHeaderText, driver.PageSource);
 
             //ver2
             Assert.Single(driver.FindElements(By.TagName("h2"))
-                .Where(tag => tag.Text == "WIEDZA NA PIERWSZYM MIEJSCU"));
+                .Where(tag => tag.Text == SearchHeaderText));
 
+        }
+
+        private void SearchAndClickWebElement(string SearchedElementToClick)
+        {
+            driver.FindElement(By.LinkText(SearchedElementToClick)).Click();
+        }
+
+        private void SearchingWebElement(string WebText)
+        {
+            var searchByText = driver.FindElement(By.LinkText(WebText));
+        }
+
+        private void SearchInGugiel(string SearchTextInGugiel)
+        {
+            var searchBox = GetSearchBox();
+            searchBox.Clear();
+            searchBox.SendKeys(SearchTextInGugiel);
+            searchBox.Submit();
+        }
+
+        private void OpenSearchResultByPageTitle(string PageTitle)
+        {
+            driver.FindElement(By.LinkText(PageTitle)).Click();
+        }
+
+        private void GoToGugiel()
+        {
+            driver.Navigate().GoToUrl(Gugiel);
+        }
+
+        private IWebElement GetSearchBox()
+        {
+            return driver.FindElement(By.Id(SearchTextBoxId));
         }
 
         protected void waitForElementPresent(By by, int seconds)
