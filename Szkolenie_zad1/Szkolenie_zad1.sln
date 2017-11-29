@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szkolenie_zad1", "Szkolenie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySelenium", "MySelenium\MySelenium.csproj", "{363AD106-352B-4658-82E1-59E6E18C8562}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PageObject_trening", "PageObject_trening", "{4973081D-AAE2-4048-B45D-928CE0F085FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectLibrary", "PageObjectLibrary\PageObjectLibrary.csproj", "{D459030C-15A4-4F8F-8F67-F208E329DFA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,16 @@ Global
 		{363AD106-352B-4658-82E1-59E6E18C8562}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{363AD106-352B-4658-82E1-59E6E18C8562}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{363AD106-352B-4658-82E1-59E6E18C8562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D459030C-15A4-4F8F-8F67-F208E329DFA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D459030C-15A4-4F8F-8F67-F208E329DFA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D459030C-15A4-4F8F-8F67-F208E329DFA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D459030C-15A4-4F8F-8F67-F208E329DFA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D459030C-15A4-4F8F-8F67-F208E329DFA0} = {4973081D-AAE2-4048-B45D-928CE0F085FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7D4D3028-6332-45B6-A059-780225FB6AAD}
