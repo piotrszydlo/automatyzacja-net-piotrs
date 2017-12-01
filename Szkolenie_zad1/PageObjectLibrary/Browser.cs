@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.ObjectModel;
+using Xunit;
 
 namespace PageObjectLibrary
 {
@@ -17,7 +17,7 @@ namespace PageObjectLibrary
 
         static Browser()
         {
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(100);
         }
@@ -43,5 +43,22 @@ namespace PageObjectLibrary
         {
             driver.Quit();
         }
+
+        internal static string PageSource()
+        {
+            return driver.PageSource;
+        }
+
+        internal static void FindElement(string linkname)
+        {
+            driver.FindElement(By.LinkText(linkname));
+        }
+
+        internal static IWebElement FindElementByPageTitle()
+        {
+            return driver.FindElement(By.XPath("/html/head/title"));
+        }
     }
+    
+    
 }
